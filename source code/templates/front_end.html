@@ -1,0 +1,35 @@
+<!doctype html>
+<head><title>Loan Calculate</title> 
+    <meta charset=utf-8> 
+<style>table{
+    padding: 1px;
+}
+tr:hover {background-color:#F5F5F5;}
+tr:nth-child(even) {background-color: #f2f2f2;}
+th{
+    background-color: cornsilk;
+    color: white;
+}
+</style>
+</head>
+    <body>
+        <h1 align = "center">Please enter the following details</h1>
+        <table border="1" align = "center" cellpadding="5" cellspacing="5" width="600">
+        <tr align="center">
+        <td><b><label for = "amount">Amount</label></b></td>
+        <td><b><label for = "interest">Annual Interest Rate</label></b></td>
+        <td><b><label for = "periods">Periods (in months)</label></b></td>
+        </tr>
+        <tr align="center">
+        <form action= "{{ url_for('loan_calculate')}}" method = "post">
+        <td><input name="amount" type="text" size=10 id="amount"/></td>
+        <td><input name="interest" type="text" size=10 id="interest"/></td>
+        <td><input name="periods" type="text" size=10 id="periods"/></td>
+        </tr>
+        <tr>
+        <td colspan="3">
+        <input type = "submit" value = "Calculate"/>
+        </td>
+        </tr>
+        </table>    
+    </body>
